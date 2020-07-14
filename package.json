@@ -1,0 +1,65 @@
+{
+  "name": "cheesecakejs",
+  "description": "Cheesecake is the best option for Raspberry Pi with Nodejs!",
+  "version": "0.1.0",
+  "main": "cheesecake.js",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write **/*.{js,json} && eslint **/*.js --fix"
+  },
+  "author": {
+    "name": "Thiago Souza",
+    "email": "dev@thiagosouza.com",
+    "url": "https://github.com/thiagodesouza"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thiagodesouza/cheesecake.git"
+  },
+  "keywords": [
+    "cheesecake",
+    "gpio",
+    "io",
+    "iot",
+    "pi",
+    "raspberry",
+    "raspi",
+    "rpi"
+  ],
+  "files": [
+    "examples",
+    "cheesecake.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "npm run format",
+      "git add ."
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}
